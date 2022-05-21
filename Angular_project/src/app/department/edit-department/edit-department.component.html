@@ -1,7 +1,7 @@
 <button pButton pRipple type="button" icon="pi pi-search" class="p-button-sm p-button-rounded p-button-success p-button-text"
         label="edit" (click)="edit()"></button>
 
-<p-dialog header="edit Student" [(visible)]="displayEditModal" [modal]="true" [draggable]="false">
+<p-dialog header="edit department" [(visible)]="displayEditModal" [modal]="true" [draggable]="false">
   <div class="grid p-fluid">
 
     <div class="col-12 md:col-4">
@@ -10,13 +10,6 @@
         <input [(ngModel)]="editedRecord.name" type="text" pInputText placeholder="name">
       </div>
     </div>
-
-<!--    <div class="col-12 md:col-4">-->
-<!--      <div class="p-inputgroup">-->
-<!--        <span class="p-inputgroup-addon"><i class="fa fa-building"></i></span>-->
-<!--        <input [(ngModel)]="editedRecord.location" type="text" pInputText placeholder="Location">-->
-<!--      </div>-->
-<!--    </div>-->
 
     <p-dropdown appendTo="body" [options]="locations" [(ngModel)]="selectedLocation"
                 optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select location">
