@@ -11,10 +11,10 @@ router.post(
   [
     body('_id').isInt().withMessage('department ID should be Integer'),
     body('name')
-      .isAlpha()
+      .isAlpha('en-US',  { ignore: ' ' })
       .withMessage('Department Name should be String')
-      .isLength({ max: 10 })
-      .withMessage('departemnt name length <10'),
+      .isLength({ max: 15 })
+      .withMessage('departemnt name length <15'),
   ],
   controller.createDepartment
 );
