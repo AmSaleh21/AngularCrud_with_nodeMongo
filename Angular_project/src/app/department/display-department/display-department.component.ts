@@ -10,7 +10,7 @@ import {Department} from "../../_models/department";
 })
 export class DisplayDepartmentComponent implements OnInit {
 
-  constructor(public departmentService: DepartmentService, public activatedRoute: ActivatedRoute) {
+  constructor(public departmentService: DepartmentService) {
   }
 
   departments:Department[] = []

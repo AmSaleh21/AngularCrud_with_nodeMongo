@@ -28,7 +28,6 @@ export class DepartmentService {
 
   private updateId(){
     this.lastId = this.departments[this.departments.length-1]._id;
-    console.log(this.lastId)
   }
 
   public addNew(name: string, location: string): void {
@@ -56,8 +55,8 @@ export class DepartmentService {
   }
 
   public update(editDepartment: Department): void {
-    let index = this.getDepartmentIndexByType(editDepartment)
 
+    let index = this.getDepartmentIndexByType(editDepartment)
     let sub:any;
 
     new Promise(()=> {
@@ -71,8 +70,8 @@ export class DepartmentService {
   }
 
   public remove(id: number): void {
-    let index = this.getDepartmentIndexByID(id);
 
+    let index = this.getDepartmentIndexByID(id);
     let sub:any;
 
     new Promise(()=> {
