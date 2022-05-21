@@ -4,12 +4,14 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {RouterModule} from "@angular/router";
 import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
+import {AboutComponent} from "./about/about.component";
 
 
 
 @NgModule({
   declarations: [
-    NavBarComponent
+    NavBarComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import {RippleModule} from "primeng/ripple";
     RippleModule
   ],
   exports: [
-    NavBarComponent
+    NavBarComponent,
+    AboutComponent
   ]
 })
 export class CoreModule { }

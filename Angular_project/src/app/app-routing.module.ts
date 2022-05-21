@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DepartmentComponent} from "./department/department/department.component";
 import {StudentComponent} from "./student/student/student.component";
+import {AboutComponent} from "./core/about/about.component";
 
 
 const routes: Routes = [
+  {path: "", component:AboutComponent},
   {path:"departments",component:DepartmentComponent},
   {path:"students",component:StudentComponent}
 ];
