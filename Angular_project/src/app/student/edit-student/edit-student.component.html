@@ -1,0 +1,33 @@
+<button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success p-button-text"
+        label="edit" (click)="edit()"></button>
+
+<p-dialog header="edit Student" [(visible)]="displayEditModal" [modal]="true" [draggable]="false">
+  <div class="grid p-fluid">
+
+    <div class="col-12 md:col-4">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input [(ngModel)]="editedRecord.name" type="text" pInputText placeholder="name">
+      </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="fa fa-birthday-cake"></i></span>
+        <input [(ngModel)]="editedRecord.age" type="number" pInputText placeholder="Age">
+      </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="fa fa-building"></i></span>
+        <input [(ngModel)]="editedRecord.department" type="number" pInputText placeholder="Department number">
+      </div>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-plus-circle" *ngIf="validEdit" (click)="save()" label="update"
+              styleClass="p-button-text"></p-button>
+    <p class="alert alert-warning" *ngIf="!validEdit">invalid data</p>
+  </ng-template>
+</p-dialog>
