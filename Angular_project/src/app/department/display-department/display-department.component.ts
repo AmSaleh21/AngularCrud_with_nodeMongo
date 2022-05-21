@@ -14,6 +14,7 @@ export class DisplayDepartmentComponent implements OnInit {
   }
 
   departments:Department[] = []
+  isConnected = false;
 
   ngOnInit(): void {
 
@@ -24,11 +25,15 @@ export class DisplayDepartmentComponent implements OnInit {
     //   this.departments = this.departmentService.getAllDepartments()
     // )
 
-    this.departmentService.callApi()
-
-    setTimeout(() => {
-      this.departments = this.departmentService.getAllDepartments();
-    }, 500)
+    try {
+      this.departmentService.callApi();
+      this.isConnected = false;
+      setTimeout(() => {
+        this.departments = this.departmentService.getAllDepartments();
+      }, 500)
+    }catch (e) {
+      this.isConnected = true;
+    }
 
   }
 
